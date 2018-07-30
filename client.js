@@ -14,9 +14,14 @@ function handleSwapClick() {
    $(this).parent().toggleClass('yellow');
 }
 
+function handleDeleteClick() {
+   $(this).parent().remove();
+}
+
 function addEventListeners() {
    $('#generate-btn').on('click', handleGenerateClick);
    $('body').on('click', '.swap-btn', handleSwapClick);
+   $('body').on('click', '.delete-btn', handleDeleteClick);
 }
 
 function readyNow() {
