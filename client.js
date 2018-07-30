@@ -1,8 +1,12 @@
-console.log('JS');
+let generateClickCount = 0;
+
 
 function handleGenerateClick() {
-   console.log('generate-btn clicked');
-   $('body').append('<div>new div</div>');
+   let newDiv = $('<div>new div</div>');
+   generateClickCount += 1;
+   newDiv.append(`<p>${generateClickCount}</p>`);
+
+   $('body').append(newDiv);
 }
 
 function addEventListeners() {
@@ -10,7 +14,6 @@ function addEventListeners() {
 }
 
 function readyNow() {
-   console.log('JQ');
    addEventListeners();
 }
 
