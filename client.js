@@ -1,8 +1,17 @@
 console.log('JS');
 
-function readyNow() {
-   console.log('JQ');
+function handleGenerateClick() {
+   console.log('generate clicked');
    
 }
 
-$(readyNow)
+function addEventListeners() {
+   $('#generate-btn').click(handleGenerateClick);
+}
+
+function readyNow() {
+   console.log('JQ');
+   addEventListeners();
+}
+
+$(readyNow);
