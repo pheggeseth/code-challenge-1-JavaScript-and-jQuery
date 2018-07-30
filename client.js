@@ -1,16 +1,22 @@
 let generateClickCount = 0;
 
-
 function handleGenerateClick() {
-   let newDiv = $('<div>new div</div>');
-   generateClickCount += 1;
-   newDiv.append(`<p>${generateClickCount}</p>`);
+   $('body').append(
+      `<div class="generated">
+         <p>${generateClickCount += 1}</p>
+         <button class="swap-btn">Swap</button>
+         <button class="delete-btn">Delete</button>
+      </div>`
+   );
+}
 
-   $('body').append(newDiv);
+function handleSwapClick() {
+   $(this).parent().toggleClass('yellow');
 }
 
 function addEventListeners() {
-   $('#generate-btn').click(handleGenerateClick);
+   $('#generate-btn').on('click', handleGenerateClick);
+   $('body').on('click', '.swap-btn', handleSwapClick);
 }
 
 function readyNow() {
