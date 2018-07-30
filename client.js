@@ -1,8 +1,8 @@
 console.log('JS');
 
 function handleGenerateClick() {
-   console.log('generate clicked');
-   
+   console.log('generate-btn clicked');
+   $('body').append('<div>new div</div>');
 }
 
 function addEventListeners() {
